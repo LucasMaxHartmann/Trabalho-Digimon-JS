@@ -5,36 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Digimon</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Buscar Digimon</h1>
+    <div class="container">
 
-    <form id="formulario">
+        <h1>Buscar Digimon</h1>
 
-        <input
-            type="text"
-            id="digimonInput"
-            placeholder="Digite o nome do Digimon"
-            required
-        >
+        <form id="meuForm">
 
-        <button type="submit" id="buscarBtn">
-            Buscar
-        </button>
+            <input
+                type="text"
+                id="digimonInput"
+                placeholder="Digite o nome do Digimon"
+                required>
 
-    </form>
+            <button type="submit">
+                Buscar
+            </button>
 
-    <div id="resultado">
+        </form>
 
-        <img id="digimonImg" src="" alt="">
+        <div id="resultado">
 
-        <h2 id="digimonNome"></h2>
+            <img id="digimonImg" src="" alt="">
 
-        <p id="digimonLevel"></p>
+            <h2 id="digimonNome"></h2>
+
+            <p id="digimonLevel"></p>
+
+        </div>
 
     </div>
 

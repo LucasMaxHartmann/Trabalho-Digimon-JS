@@ -1,48 +1,45 @@
-const botao = document.getElementById("buscarBtn");
+const formulario = document.getElementById("formulario");
 
-// Adiciona o evento de clique ao botão
-botao.addEventListener("click", buscarDigimon);
+formulario.addEventListener("submit", function(event) {
 
- // Função assíncrona responsável por buscar os dados na API
-async function buscarDigimon(){
+    event.preventDefault();
 
+    buscarDigimon();
+});
+
+async function buscarDigimon() {
 
     const nomeDigimon = document
         .getElementById("digimonInput")
         .value
-        .toLowerCase();
+        .trim();
 
-    const url =
-`https://digimon-api.vercel.app/api/digimon/name/${nomeDigimon}`;
+    if (nomeDigimon === "") {
 
-    try{
+        alert("Digite o nome de um Digimon!");
 
-        const resposta = await fetch(url);
+        return;
+    }
+
+    try {
+
+        const resposta = await fetch(
+            `https://digimon-api.vercel.app/api/digimon/name/${nomeDigimon}`
+        );
 
         const dados = await resposta.json();
-
-        console.log(dados);
-
 
         document.getElementById("digimonNome").textContent =
             dados[0].name;
 
-
         document.getElementById("digimonLevel").textContent =
             "Nível: " + dados[0].level;
-
 
         document.getElementById("digimonImg").src =
             dados[0].img;
 
-
-    }catch(error){
-
+    } catch (erro) {
 
         alert("Digimon não encontrado!");
-        alert("Tente digitar o nome corretamente.");
-
-
-        console.log(error);
     }
 }

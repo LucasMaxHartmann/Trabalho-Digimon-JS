@@ -1,10 +1,11 @@
-const formulario = document.getElementById("formulario");
+const formulario = document.getElementById("meuForm");
 
 formulario.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
     buscarDigimon();
+
 });
 
 async function buscarDigimon() {
@@ -12,20 +13,14 @@ async function buscarDigimon() {
     const nomeDigimon = document
         .getElementById("digimonInput")
         .value
-        .trim();
+        .toLowerCase();
 
-    if (nomeDigimon === "") {
-
-        alert("Digite o nome de um Digimon!");
-
-        return;
-    }
+    const url =
+        `https://digimon-api.vercel.app/api/digimon/name/${nomeDigimon}`;
 
     try {
 
-        const resposta = await fetch(
-            `https://digimon-api.vercel.app/api/digimon/name/${nomeDigimon}`
-        );
+        const resposta = await fetch(url);
 
         const dados = await resposta.json();
 
@@ -38,8 +33,12 @@ async function buscarDigimon() {
         document.getElementById("digimonImg").src =
             dados[0].img;
 
-    } catch (erro) {
+    } catch (error) {
 
-        alert("Digimon não encontrado!");
+        alert("Digimon não encontrado!\nTente digitar novamente");
+
+        console.log(error);
+
     }
+
 }

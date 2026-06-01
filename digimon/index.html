@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digimon Search</title>
+    <title>Buscar Digimon</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<!-- Título principal da página -->
+
     <h1>Buscar Digimon</h1>
-    
-<!-- Campo para digitar o nome do Digimon -->
-    <input 
-        type="text" 
-        id="digimonInput" 
-        placeholder="Digite o nome do Digimon">
 
-    <button id="buscarBtn">
-        Buscar
-    </button>
+    <form id="formulario">
 
-    <!-- Área de resultado -->
+        <input
+            type="text"
+            id="digimonInput"
+            placeholder="Digite o nome do Digimon"
+            required
+        >
+
+        <button type="submit" id="buscarBtn">
+            Buscar
+        </button>
+
+    </form>
+
     <div id="resultado">
 
         <img id="digimonImg" src="" alt="">
@@ -35,4 +41,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

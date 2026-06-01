@@ -1,9 +1,11 @@
 body{
 
     font-family: Arial, Helvetica, sans-serif;
-
+    
+    // Cor de fundo da página //
     background-color: #0b1020;
-
+    
+   // Cor padrão dos textos //
     color: white;
 
     text-align: center;

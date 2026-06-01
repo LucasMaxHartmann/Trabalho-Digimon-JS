@@ -1,8 +1,9 @@
 const botao = document.getElementById("buscarBtn");
 
+// Adiciona o evento de clique ao botão
 botao.addEventListener("click", buscarDigimon);
 
-
+ // Função assíncrona responsável por buscar os dados na API
 async function buscarDigimon(){
 
 
